@@ -2,9 +2,16 @@ rpc_url: "https://rpc.soneium.org"
 chain_id: 1868
 native_token: "ETH"
 tasks:
-  - kyo_swap
-kyo_token_in: "0xba9986d2381edf1da03b0b9c1f8b00dc4aacc369"  # USDC
-kyo_token_out: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"  # Soneium ETH
-kyo_swap_amount: 10                  # 10 USDC per swap
-kyo_num_swaps: 3
-minimum_balance: 0.05
+  - swap:
+      token_in: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"  # ETH
+      token_out: "0xba9986d2381edf1da03b0b9c1f8b00dc4aacc369"  # USDC
+      swap_amount: 0.1  # Amount in ETH per swap
+      num_swaps: 3  # Number of swaps from ETH to USDC
+      amount_out_min: 0  # Minimum USDC to receive
+  - swap:
+      token_in: "0xba9986d2381edf1da03b0b9c1f8b00dc4aacc369"  # USDC
+      token_out: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"  # ETH
+      swap_amount: 10  # Amount in USDC per swap
+      num_swaps: 3  # Number of swaps from USDC to ETH
+      amount_out_min: 0  # Minimum ETH to receive
+minimum_balance: 0.05  # Minimum ETH balance to proceed
