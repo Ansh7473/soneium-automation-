@@ -1,6 +1,5 @@
-# src/utils.py
-from web3 import Web3
 import yaml
+from web3 import Web3
 
 def load_config(file_path="src/config.yaml"):
     with open(file_path, "r") as f:
@@ -20,8 +19,11 @@ def load_proxies(file_path="data/proxies.txt"):
     except FileNotFoundError:
         return []
 
-def init_web3(rpc_url):
-    w3 = Web3(Web3.HTTPProvider(rpc_url))
+def init_web3(rpc_url, proxy=None):
+    if proxy:
+        w3 = Web3(Web3.HTTPProvider(rpc_url, request_kwargs={'proxies': {'http': proxy, 'https': proxy}}))
+    else:
+        w3 = Web3(Web3.HTTPProvider(rpc_url))
     if not w3.is_connected():
-        raise Exception("Failed to connect to Soneium RPC")
+        raise Exception("Failed to connect to RPC")
     return w3
