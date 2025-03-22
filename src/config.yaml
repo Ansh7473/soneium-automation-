@@ -1,10 +1,10 @@
 rpc_url: "https://rpc.soneium.org"
 chain_id: 1868
-native_token: "SONE"
+native_token: "ETH"
 tasks:
   - kyo_swap
-kyo_token_in: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"  # SONE (ETH placeholder)
-kyo_token_out: "0xba9986d2381edf1da03b0b9c1f8b00dc4aacc369"  # USDC
-kyo_swap_amount: 0.1  # 0.1 SONE per swap
+kyo_token_in: "0xba9986d2381edf1da03b0b9c1f8b00dc4aacc369"  # USDC
+kyo_token_out: "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"  # Soneium ETH
+kyo_swap_amount: 10                  # 10 USDC per swap
 kyo_num_swaps: 3
 minimum_balance: 0.05
