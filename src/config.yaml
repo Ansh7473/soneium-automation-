@@ -1,9 +1,9 @@
-rpc_url: "https://rpc.soneium.org"  # Soneium mainnet RPC URL
-chain_id: 1868                      # Soneium chain ID
-native_token: "ETH"                 # Native token symbol
+rpc_url: "https://rpc.soneium.org"
+chain_id: 1868
+native_token: "ETH"
 tasks:
   - rotate_swaps:
-      num_rotations: 5            # Number of full cycles (ETH → USDC → ETH)
-      eth_to_usdc_amount: 0.1     # Amount of ETH to swap to USDC per rotation
-      usdc_to_eth_amount: 10      # Amount of USDC to swap to ETH per rotation
-minimum_balance: 0.05              # Minimum ETH balance required to start
+      num_rotations: 5
+      eth_to_usdc_amount: 0.1
+      usdc_to_eth_amount: 10
+minimum_balance: 0.05
